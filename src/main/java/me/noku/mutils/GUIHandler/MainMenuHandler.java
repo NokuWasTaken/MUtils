@@ -29,12 +29,12 @@ public class MainMenuHandler implements Listener {
                             player.openInventory(SettingsMenu.gui);
                             break;
                         case 32:
-                            LifeMenu.LifeGenerator();
-                            player.openInventory(LifeMenu.gui);
-                            break;
-                        case 34:
                             TimerMenu.InventoryBuilder();
                             player.openInventory(TimerMenu.gui);
+                            break;
+                        case 34:
+                            LifeMenu.LifeGenerator();
+                            player.openInventory(LifeMenu.gui);
                             break;
                     }
                 }

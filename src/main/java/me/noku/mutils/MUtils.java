@@ -7,6 +7,7 @@ import me.noku.mutils.Events.*;
 import me.noku.mutils.GUIHandler.LifeMenuHandler;
 import me.noku.mutils.GUIHandler.MainMenuHandler;
 import me.noku.mutils.GUIHandler.SettingsMenuHandler;
+import me.noku.mutils.GUIHandler.TimerMenuHandler;
 import me.noku.mutils.UTils.ItemBuilder;
 import me.noku.mutils.UTils.Timer;
 import org.bukkit.Bukkit;
@@ -65,6 +66,7 @@ public final class MUtils extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new EntityregainHealtEvent(), this);
         Bukkit.getPluginManager().registerEvents(new DeathEvent(), this);
         Bukkit.getPluginManager().registerEvents(new LifeMenuHandler(), this);
+        Bukkit.getPluginManager().registerEvents(new TimerMenuHandler(), this);
     }
 
     public void Deathevent (String Time, String deathPlayer) {

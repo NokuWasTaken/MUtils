@@ -12,12 +12,12 @@ public class DamageEvent implements Listener {
 
     @EventHandler
     public void onDamage (EntityDamageEvent event) {
-        if (!MUtils.getInstance().getTimer().isRunning()) {
-            event.setCancelled(true);
-        }
+
         if (event.getEntity() instanceof Player) {
             Player player = (Player) event.getEntity();
-
+            if (!MUtils.getInstance().getTimer().isRunning()) {
+                event.setCancelled(true);
+            }
             if (MUtils.getInstance().getTimer().isRunning()) {
                 event.setDamage(event.getDamage() * MUtils.getInstance().getConfig().getInt("gamerule.damageMultiplier"));
             }

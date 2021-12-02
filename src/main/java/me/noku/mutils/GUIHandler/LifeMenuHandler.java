@@ -50,7 +50,7 @@ public class LifeMenuHandler implements Listener {
                         break;
                     case 31:
                         player.setHealth(player.getMaxHealth());
-                        player.sendMessage(MUtils.MainPrefix() + ChatColor.GOLD + "Du wurdest geheilt " + ChatColor.GRAY + "( " + ChatColor.DARK_PURPLE + player.getMaxHealth() / 2 + ChatColor.GOLD + " Herzen" + ChatColor.GRAY + " )");
+                        player.sendMessage(MUtils.MainPrefix() + ChatColor.GOLD + "Du wurdest geheilt " + ChatColor.GRAY + "[ " + ChatColor.DARK_PURPLE + player.getMaxHealth() / 2 + ChatColor.GOLD + " Herzen" + ChatColor.GRAY + " ]");
                         break;
                     case 33:
                         player.setMaxHealth(player.getMaxHealth() + 1);

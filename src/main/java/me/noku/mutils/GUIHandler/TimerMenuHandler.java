@@ -41,7 +41,7 @@ public class TimerMenuHandler implements Listener{
                             MUtils.getInstance().getTimer().setRunning(false);
                             MUtils.getInstance().getTimer().setTime(0);
                             for (Player allPLayer : Bukkit.getOnlinePlayers()) {
-                                allPLayer.sendMessage(MUtils.TimerPrefix() + ChatColor.GOLD + "Der Timer wurde " + ChatColor.RED + "pausiert");
+                                allPLayer.sendMessage(MUtils.TimerPrefix() + ChatColor.GOLD + "Der Timer wurde " + ChatColor.RED + "zurückgesetzt");
                             }
                             break;
                     }

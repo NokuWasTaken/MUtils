@@ -1,23 +1,18 @@
 package me.noku.mutils.GUI;
 
-import com.sun.org.apache.bcel.internal.generic.MULTIANEWARRAY;
-import me.noku.mutils.MUtils;
 import me.noku.mutils.UTils.ItemBuilder;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 
-import java.util.ArrayList;
 
 public class TimerMenu {
 
-    public static Inventory gui = Bukkit.createInventory(null, 28, ChatColor.GRAY + ">> " + ChatColor.GOLD + "Timer");
+    public static Inventory gui = Bukkit.createInventory(null, 27, ChatColor.GRAY + ">> " + ChatColor.GOLD + "Timer");
 
     public static void InventoryBuilder () {
-        for (int i = 0; i <=27; i++) {
+        for (int i = 0; i <=26; i++) {
             gui.setItem(i, new ItemBuilder(Material.GRAY_STAINED_GLASS_PANE).setDisplayname("").build());
         }
 
