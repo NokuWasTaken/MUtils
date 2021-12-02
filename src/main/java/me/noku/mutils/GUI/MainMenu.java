@@ -1,5 +1,6 @@
 package me.noku.mutils.GUI;
 
+import me.noku.mutils.UTils.ItemBuilder;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -69,14 +70,14 @@ public class MainMenu {
         //platzierung
 
         for (int i = 0; i <= 44; i++) {
-            gui.setItem(i, placeholder);
+            gui.setItem(i, new ItemBuilder(Material.GRAY_STAINED_GLASS_PANE).setDisplayname("").build());
         }
 
-        gui.setItem(13, version);
-        gui.setItem(28, openChallenges);
-        gui.setItem(31, openSettings);
-        gui.setItem(34, openHealth);
-
+        gui.setItem(13, new ItemBuilder(Material.NETHER_STAR).setDisplayname(ChatColor.GOLD + "MUtils " + ChatColor.AQUA + "v1.0" + ChatColor.RED + " Dev").build());
+        gui.setItem(28, new ItemBuilder(Material.CONDUIT).setDisplayname(ChatColor.DARK_PURPLE + "Challenges").setLore("Click / Open").build());
+        gui.setItem(30, new ItemBuilder(Material.COMMAND_BLOCK).setDisplayname(ChatColor.GOLD + "Settings").setLore("Click / Open").build());
+        gui.setItem(32, new ItemBuilder(Material.CLOCK).setDisplayname(ChatColor.GREEN + "Timer").setLore("Click / Open").build());
+        gui.setItem(34, new ItemBuilder(Material.GOLDEN_APPLE).setDisplayname(ChatColor.RED + "Life").setLore("Click / Open").build());
     }
 
 }

@@ -7,6 +7,7 @@ import me.noku.mutils.Events.*;
 import me.noku.mutils.GUIHandler.LifeMenuHandler;
 import me.noku.mutils.GUIHandler.MainMenuHandler;
 import me.noku.mutils.GUIHandler.SettingsMenuHandler;
+import me.noku.mutils.UTils.ItemBuilder;
 import me.noku.mutils.UTils.Timer;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -21,7 +22,7 @@ public final class MUtils extends JavaPlugin {
     private static MUtils instance;
     private Timer timer;
 
-    public static String MainPrefix () { return ChatColor.GOLD + "MUtils" + ChatColor.GRAY + " >> " + ChatColor.GRAY; }
+    public static String MainPrefix () { return ChatColor.GOLD + "MUtils" + ChatColor.GRAY + " | " + ChatColor.GRAY; }
     public static String DamagePrefix () {return ChatColor.DARK_RED + "Damage" + ChatColor.GRAY + " | " + ChatColor.GRAY;}
     public static String DeathPrefix () {return ChatColor.RED + "Tod" + ChatColor.GRAY + " | " + ChatColor.GRAY;}
     public static String TimerPrefix () { return ChatColor.GOLD + "Timer" + ChatColor.GRAY + " | " + ChatColor.GRAY;}
@@ -141,5 +142,6 @@ public final class MUtils extends JavaPlugin {
     }
 
     public Timer getTimer() { return timer; }
+
 
 }
