@@ -1,0 +1,17 @@
+name: MUtils
+version: 1.0
+main: me.noku.mutils.MUtils
+api-version: 1.17
+authors: [ Noku ]
+
+commands:
+  settings:
+    permission: MUtils.settings
+  invsee:
+    permission: MUtils.invsee
+  timer:
+    permission: MUtils.Timer
+
+permissions:
+    MUtils.settings:
+      default: op

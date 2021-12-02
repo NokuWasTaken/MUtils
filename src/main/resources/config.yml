@@ -1,0 +1,15 @@
+timer:
+  time:
+target:
+  enderDragon: false
+  wither: false
+gamerule:
+  ultraHardCore: false
+  ultraUltraHardCore: false
+  splitHearts: false
+  lifeScoreTab: false
+  allowDie: false
+  damageMessage: false
+  damageMultiplier: 1
+  prottime: 0
+
