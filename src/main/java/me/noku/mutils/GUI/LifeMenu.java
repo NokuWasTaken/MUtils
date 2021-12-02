@@ -1,13 +1,12 @@
 package me.noku.mutils.GUI;
 
-import me.noku.mutils.Events.InventoryClickEvent;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.checkerframework.checker.units.qual.A;
 
 import java.util.ArrayList;
 
@@ -16,7 +15,7 @@ public class LifeMenu {
 
     public static void LifeGenerator () {
 
-        //PlaceHolde
+        //PlaceHolder
         ItemStack placeholder = new ItemStack(Material.GRAY_STAINED_GLASS_PANE);
         ItemMeta placeholder_meta = placeholder.getItemMeta();
         placeholder_meta.setDisplayName("");

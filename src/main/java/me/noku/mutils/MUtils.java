@@ -21,7 +21,7 @@ public final class MUtils extends JavaPlugin {
     private static MUtils instance;
     private Timer timer;
 
-    public static String MainPrefix () { return ChatColor.GOLD + "MUtils" + ChatColor.GRAY + " | " + ChatColor.GRAY; }
+    public static String MainPrefix () { return ChatColor.GOLD + "MUtils" + ChatColor.GRAY + " >> " + ChatColor.GRAY; }
     public static String DamagePrefix () {return ChatColor.DARK_RED + "Damage" + ChatColor.GRAY + " | " + ChatColor.GRAY;}
     public static String DeathPrefix () {return ChatColor.RED + "Tod" + ChatColor.GRAY + " | " + ChatColor.GRAY;}
     public static String TimerPrefix () { return ChatColor.GOLD + "Timer" + ChatColor.GRAY + " | " + ChatColor.GRAY;}
