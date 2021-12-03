@@ -1,5 +1,6 @@
 package me.noku.mutils.GUIHandler;
 
+import me.noku.mutils.GUI.MainMenu;
 import me.noku.mutils.MUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -18,6 +19,10 @@ public class ChallengeMenuHandler implements Listener {
                     if (event.getCurrentItem().getItemMeta() != null) {
                         event.setCancelled(true);
                         switch (event.getSlot()) {
+                            case 0:
+                                MainMenu.MainGUIGenerator();
+                                player.openInventory(MainMenu.gui);
+                                break;
                             case 10:
                                 if (MUtils.getInstance().getConfig().getBoolean("challenge.onlyDirt")) {
                                     MUtils.getInstance().getConfig().set("challenge.onlyDirt", false);
