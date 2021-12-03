@@ -281,7 +281,7 @@ public class SettingsMenuHandler implements Listener {
                     }
                 }
             }
-            if (event.getView().getTitle().equals(ChatColor.GRAY + ">> " + ChatColor.GOLD + ChatColor.BOLD + "Settings" + ChatColor.GRAY + "Seite 2")) {
+            if (event.getView().getTitle().equals(ChatColor.GRAY + ">> " + ChatColor.GOLD + ChatColor.BOLD + "Settings" + ChatColor.GRAY + " Seite 2")) {
                 if (event.getCurrentItem() != null) {
                     if (event.getCurrentItem().getItemMeta() != null) {
                         event.setCancelled(true);
