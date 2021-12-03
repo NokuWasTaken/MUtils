@@ -7,6 +7,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class DamageEvent implements Listener {
 
@@ -39,6 +41,9 @@ public class DamageEvent implements Listener {
             if (event.getCause() == EntityDamageEvent.DamageCause.FALL) {
                 if (MUtils.getInstance().getConfig().getBoolean("gamerule.noFallDamage")) {
                     player.setHealth(0);
+                }
+                if (MUtils.getInstance().getConfig().getBoolean("gamerule.50BlocksIntoTheAir")) {
+                    player.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 1, 42, false));
                 }
             }
         }

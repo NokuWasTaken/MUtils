@@ -68,6 +68,21 @@ public class ChallengeMenuHandler implements Listener {
                                     }
                                 }
                                 break;
+                            case 20:
+                                if (MUtils.getInstance().getConfig().getBoolean("challenge.50BlocksIntoTheAir")) {
+                                    MUtils.getInstance().getConfig().set("challenge.50BlocksIntoTheAir", false);
+                                    MUtils.getInstance().saveConfig();
+                                    for (Player allPlayer : Bukkit.getOnlinePlayers()) {
+                                        allPlayer.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "50 BlocksIntoTheAir challenge deaktiviert");
+                                    }
+                                } else if (!MUtils.getInstance().getConfig().getBoolean("challenge.50BlocksIntoTheAir")) {
+                                    MUtils.getInstance().getConfig().set("challenge.50BlocksIntoTheAir", true);
+                                    MUtils.getInstance().saveConfig();
+                                    for (Player allPlayer : Bukkit.getOnlinePlayers()) {
+                                        allPlayer.sendMessage(MUtils.MainPrefix() + ChatColor.GREEN + "50 BlocksIntoTheAir Challenge aktiviert");
+                                    }
+                                }
+                                break;
 
 
                         }
