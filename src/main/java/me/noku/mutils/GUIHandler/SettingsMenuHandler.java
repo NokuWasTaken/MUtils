@@ -227,6 +227,76 @@ public class SettingsMenuHandler implements Listener {
                         }
                         break;
 
+                    case 15:
+                        if (MUtils.getInstance().getConfig().getBoolean("gamerule.noXP")) {
+                            MUtils.getInstance().getConfig().set("gamerule.noXP", false);
+                            MUtils.getInstance().saveConfig();
+                            for (Player allPlayer : Bukkit.getOnlinePlayers()) {
+                                allPlayer.sendTitle("", ChatColor.GOLD + "XP" + ChatColor.RED + " nicht erlaubt");
+                                allPlayer.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "XP nicht erlaubt");
+                            }
+                        } else if (!MUtils.getInstance().getConfig().getBoolean("gamerule.noXP")) {
+                            MUtils.getInstance().getConfig().set("gamerule.noXP", true);
+                            MUtils.getInstance().saveConfig();
+                            for (Player allPlayer : Bukkit.getOnlinePlayers()) {
+                                allPlayer.sendTitle("", ChatColor.GOLD + "XP " + ChatColor.GREEN + " erlaubt");
+                                allPlayer.sendMessage(MUtils.MainPrefix() + ChatColor.GREEN + "XP erlaubt");
+                            }
+                        }
+                        break;
+
+                    case 24:
+                        if (MUtils.getInstance().getConfig().getBoolean("gamerule.noCrafting")) {
+                            MUtils.getInstance().getConfig().set("gamerule.noCrafting", false);
+                            MUtils.getInstance().saveConfig();
+                            for (Player allPlayer : Bukkit.getOnlinePlayers()) {
+                                allPlayer.sendTitle("", ChatColor.GOLD + "Crafting" + ChatColor.RED + " nicht erlaubt");
+                                allPlayer.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Crafting nicht erlaubt");
+                            }
+                        } else if (!MUtils.getInstance().getConfig().getBoolean("gamerule.noCrafting")) {
+                            MUtils.getInstance().getConfig().set("gamerule.noCrafting", true);
+                            MUtils.getInstance().saveConfig();
+                            for (Player allPlayer : Bukkit.getOnlinePlayers()) {
+                                allPlayer.sendTitle("", ChatColor.GOLD + "Crafting " + ChatColor.GREEN + " erlaubt");
+                                allPlayer.sendMessage(MUtils.MainPrefix() + ChatColor.GREEN + "Crafting erlaubt");
+                            }
+                        }
+                        break;
+
+                    case 16:
+                        if (MUtils.getInstance().getConfig().getBoolean("gamerule.noJumping")) {
+                            MUtils.getInstance().getConfig().set("gamerule.noJumping", false);
+                            MUtils.getInstance().saveConfig();
+                            for (Player allPlayer : Bukkit.getOnlinePlayers()) {
+                                allPlayer.sendTitle("", ChatColor.GOLD + "Springen" + ChatColor.RED + " nicht erlaubt");
+                                allPlayer.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Springen nicht erlaubt");
+                            }
+                        } else if (!MUtils.getInstance().getConfig().getBoolean("gamerule.noJumping")) {
+                            MUtils.getInstance().getConfig().set("gamerule.noJumping", true);
+                            MUtils.getInstance().saveConfig();
+                            for (Player allPlayer : Bukkit.getOnlinePlayers()) {
+                                allPlayer.sendTitle("", ChatColor.GOLD + "Springen " + ChatColor.GREEN + " erlaubt");
+                                allPlayer.sendMessage(MUtils.MainPrefix() + ChatColor.GREEN + "Springen erlaubt");
+                            }
+                        }
+                        break;
+                    case 25:
+                        if (MUtils.getInstance().getConfig().getBoolean("gamerule.noSneak")) {
+                            MUtils.getInstance().getConfig().set("gamerule.noSneak", false);
+                            MUtils.getInstance().saveConfig();
+                            for (Player allPlayer : Bukkit.getOnlinePlayers()) {
+                                allPlayer.sendTitle("", ChatColor.GOLD + "Sneaken" + ChatColor.RED + " nicht erlaubt");
+                                allPlayer.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Sneaken nicht erlaubt");
+                            }
+                        } else if (!MUtils.getInstance().getConfig().getBoolean("gamerule.noSneak")) {
+                            MUtils.getInstance().getConfig().set("gamerule.noSneak", true);
+                            MUtils.getInstance().saveConfig();
+                            for (Player allPlayer : Bukkit.getOnlinePlayers()) {
+                                allPlayer.sendTitle("", ChatColor.GOLD + "Sneaken " + ChatColor.GREEN + " erlaubt");
+                                allPlayer.sendMessage(MUtils.MainPrefix() + ChatColor.GREEN + "Sneaken erlaubt");
+                            }
+                        }
+                        break;
                 }
             }
         }

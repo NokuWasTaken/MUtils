@@ -12,4 +12,8 @@ gamerule:
   damageMessage: false
   damageMultiplier: 1
   prottime: 0
+  noXP: false
+  noSneak: false
+  noJump: false
+  noCrafting: false
 
