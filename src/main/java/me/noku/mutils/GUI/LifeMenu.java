@@ -107,7 +107,7 @@ public class LifeMenu {
             gui.setItem(i, new ItemBuilder(Material.GRAY_STAINED_GLASS_PANE).setDisplayname("").build());
         }
 
-        gui.setItem(0, new ItemBuilder(Material.ACACIA_DOOR).setDisplayname(ChatColor.GOLD + "Zurück").setLore("Click / Open").build());
+        gui.setItem(0, new ItemBuilder(Material.SPRUCE_DOOR).setDisplayname(ChatColor.GOLD + "Zurück").setLore("Click / Open").build());
         gui.setItem(10, new ItemBuilder(Material.NETHERITE_CHESTPLATE).setDisplayname(ChatColor.GOLD + "Double Lifes").setLore("Click / Set").build());
         gui.setItem(12, new ItemBuilder(Material.DIAMOND_CHESTPLATE).setDisplayname(ChatColor.GOLD + "Normal Lifes").setLore("Click / Set").build());
         gui.setItem(14, new ItemBuilder(Material.IRON_CHESTPLATE).setDisplayname(ChatColor.GOLD + "Half Lifes").setLore("Click / Set").build());

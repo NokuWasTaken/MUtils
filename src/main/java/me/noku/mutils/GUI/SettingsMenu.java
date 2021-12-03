@@ -133,7 +133,7 @@ public class SettingsMenu {
             gui.setItem(i, new ItemBuilder(Material.GRAY_STAINED_GLASS_PANE).setDisplayname("").build());
         }
 
-        gui.setItem(0, new ItemBuilder(Material.ACACIA_DOOR).setDisplayname(ChatColor.GOLD + "Zurück").setLore("Click / Open").build());
+        gui.setItem(0, new ItemBuilder(Material.SPRUCE_DOOR).setDisplayname(ChatColor.GOLD + "Zurück").setLore("Click / Open").build());
         gui.setItem(10, new ItemBuilder(Material.DRAGON_HEAD).setDisplayname(ChatColor.GOLD + "Enderdrachen töten beendet die Challenge").setLore("Click / Set").build());
         gui.setItem(11, new ItemBuilder(Material.GOLDEN_APPLE).setDisplayname(ChatColor.GOLD + "Ultra Hardcore").setLore("Click / Set").build());
         gui.setItem(12, new ItemBuilder(Material.NETHERITE_AXE).setDisplayname(ChatColor.GOLD + "Damage Multiplier").setLore("Click / +1").build());
