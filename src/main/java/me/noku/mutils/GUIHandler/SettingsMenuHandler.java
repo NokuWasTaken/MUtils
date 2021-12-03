@@ -274,7 +274,7 @@ public class SettingsMenuHandler implements Listener {
                                 break;
                             case 35:
                                 SettingsMenu.SettingsGenerator();
-                                player.openInventory(SettingsMenu.gui);
+                                player.openInventory(SettingsMenu.gui2);
                                 break;
 
                         }
