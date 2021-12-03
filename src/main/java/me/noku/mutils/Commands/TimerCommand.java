@@ -2,6 +2,7 @@ package me.noku.mutils.Commands;
 
 
 import me.noku.mutils.GUI.LifeMenu;
+import me.noku.mutils.GUI.TimerMenu;
 import me.noku.mutils.MUtils;
 import me.noku.mutils.UTils.Timer;
 import org.bukkit.Bukkit;
@@ -52,8 +53,8 @@ public class TimerCommand implements CommandExecutor {
         } else if (args.length == 0) {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
-                LifeMenu.LifeGenerator();
-                player.openInventory(LifeMenu.gui);
+                TimerMenu.InventoryBuilder();
+                player.openInventory(TimerMenu.gui);
             }
         }
 

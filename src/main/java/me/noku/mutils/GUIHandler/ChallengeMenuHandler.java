@@ -13,7 +13,7 @@ public class ChallengeMenuHandler implements Listener {
     public void onClick(InventoryClickEvent event) {
         if (event.getWhoClicked() instanceof Player) {
             Player player = (Player) event.getWhoClicked();
-            if (event.getView().getTitle().equals(ChatColor.GRAY + ">> " + ChatColor.GOLD + "Life Settings")) {
+            if (event.getView().getTitle().equals(ChatColor.GRAY + ">> " + ChatColor.GOLD + "Challenges")) {
                 if (event.getCurrentItem() != null) {
                     if (event.getCurrentItem().getItemMeta() != null) {
                         event.setCancelled(true);
