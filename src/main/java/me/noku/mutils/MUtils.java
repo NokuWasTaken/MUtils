@@ -137,7 +137,7 @@ public final class MUtils extends JavaPlugin {
 
     public void boot() {
         log("--------------------------\n" +
-                "       MUtils v1.0 (Beta)    \n" +
+                "       MUtils v1.2          \n" +
                 "            by NokuHD        \n" +
                 "    --------------------------");
 
