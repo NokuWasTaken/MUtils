@@ -27,7 +27,9 @@ public class MoveEvent implements Listener {
 
             if (MUtils.getInstance().getConfig().getBoolean("challenge.onlyDirt")) {
                 if (loc.getBlock().getType() != Material.DIRT) {
-                    player.setHealth(0);
+                    if (loc.getBlock().getType() != Material.AIR) {
+                        player.setHealth(0);
+                    }
                 }
             }
 
