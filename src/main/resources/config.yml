@@ -17,7 +17,7 @@ gamerule:
   noJump: false
   noCrafting: false
   noFallDamage: false
-  50BlockIntoTheAir: false
+  50BlocksIntoTheAir: false
 challenge:
   onlyDirt: false
   bedrockWalls: false
