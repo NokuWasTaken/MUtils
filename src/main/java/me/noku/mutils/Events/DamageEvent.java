@@ -36,8 +36,11 @@ public class DamageEvent implements Listener {
                 }
             }
 
-
-
+            if (event.getCause() == EntityDamageEvent.DamageCause.FALL) {
+                if (MUtils.getInstance().getConfig().getBoolean("gamerule.noFallDamage")) {
+                    player.setHealth(0);
+                }
+            }
         }
     }
 }

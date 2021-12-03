@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class SettingsMenu {
 
     public static Inventory gui = Bukkit.createInventory(null, 36, ChatColor.GRAY + ">> " + ChatColor.GOLD + ChatColor.BOLD + "Settings");
+    public static Inventory gui2 = Bukkit.createInventory(null, 36, ChatColor.GRAY + ">> " + ChatColor.GOLD + ChatColor.BOLD + "Settings" + ChatColor.GRAY + "Seite 2");
 
     public static void SettingsGenerator () {
 
@@ -20,7 +21,7 @@ public class SettingsMenu {
             gui.setItem(i, new ItemBuilder(Material.GRAY_STAINED_GLASS_PANE).setDisplayname("").build());
         }
 
-        gui.setItem(0, new ItemBuilder(Material.SPRUCE_DOOR).setDisplayname(ChatColor.GOLD + "Zurück").setLore("Click / Open").build());
+        gui.setItem(0,  new ItemBuilder(Material.SPRUCE_DOOR).setDisplayname(ChatColor.GOLD + "Zurück").setLore("Click / Open").build());
         gui.setItem(10, new ItemBuilder(Material.DRAGON_HEAD).setDisplayname(ChatColor.GOLD + "Enderdrachen töten beendet die Challenge").setLore("Click / Set").build());
         gui.setItem(11, new ItemBuilder(Material.GOLDEN_APPLE).setDisplayname(ChatColor.GOLD + "Ultra Hardcore").setLore("Click / Set").build());
         gui.setItem(12, new ItemBuilder(Material.NETHERITE_AXE).setDisplayname(ChatColor.GOLD + "Damage Multiplier").setLore("Click / +1").build());
@@ -35,6 +36,14 @@ public class SettingsMenu {
         gui.setItem(23, new ItemBuilder(Material.RESPAWN_ANCHOR).setDisplayname(ChatColor.GOLD + "Sterben erlaubt").setLore("Click / Set").build());
         gui.setItem(24, new ItemBuilder(Material.CRAFTING_TABLE).setDisplayname(ChatColor.GOLD + "No Crafting Table").setLore("Click / Set").build());
         gui.setItem(25, new ItemBuilder(Material.PISTON).setDisplayname(ChatColor.GOLD + "No Sneaking").setLore("Click / Set").build());
+        gui.setItem(35, new ItemBuilder(Material.SPRUCE_DOOR).setDisplayname(ChatColor.GOLD + "Seite 2").setLore("Click / Open").build());
+
+        for(int i = 0; i <= 35; i++) {
+            gui2.setItem(i, new ItemBuilder(Material.GRAY_STAINED_GLASS_PANE).setDisplayname("").build());
+        }
+        gui2.setItem(0,  new ItemBuilder(Material.SPRUCE_DOOR).setDisplayname(ChatColor.GOLD + "Zurück").setLore("Click / Open").build());
+        gui2.setItem(10, new ItemBuilder(Material.FEATHER).setDisplayname(ChatColor.GOLD + "Fallschaden erlaubt").setLore("Click / Set").build());
+        gui2.setItem(27, new ItemBuilder(Material.SPRUCE_DOOR).setDisplayname(ChatColor.GOLD + "Seite 1").setLore("Click / Open").build());
 
     }
 

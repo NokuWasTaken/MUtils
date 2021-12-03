@@ -16,8 +16,9 @@ gamerule:
   noSneak: false
   noJump: false
   noCrafting: false
+  noFallDamage: false
 challenge:
   onlyDirt: false
   bedrockWalls: false
-  blockDespawn: falaw
+  blockDespawn: false
 

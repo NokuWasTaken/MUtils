@@ -1,6 +1,7 @@
 package me.noku.mutils.GUIHandler;
 
 import me.noku.mutils.GUI.MainMenu;
+import me.noku.mutils.GUI.SettingsMenu;
 import me.noku.mutils.MUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -272,6 +273,44 @@ public class SettingsMenuHandler implements Listener {
                                 }
                                 break;
                         }
+                    }
+                }
+            }
+            if (event.getView().getTitle().equals(ChatColor.GRAY + ">> " + ChatColor.GOLD + ChatColor.BOLD + "Settings" + ChatColor.GRAY + "Seite 2")) {
+                if (event.getCurrentItem() != null) {
+                    if (event.getCurrentItem().getItemMeta() != null) {
+                        event.setCancelled(true);
+
+                        switch (event.getSlot()) {
+                            case 0:
+                                MainMenu.MainGUIGenerator();
+                                player.openInventory(MainMenu.gui);
+                                break;
+                            case 10:
+                                if (!MUtils.getInstance().getConfig().getBoolean("gamerule.noFallDamage")) {
+                                    MUtils.getInstance().getConfig().set("gamerule.noFallDamage", true);
+                                    MUtils.getInstance().saveConfig();
+                                    for (Player allPlayer : Bukkit.getOnlinePlayers()) {
+                                        allPlayer.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Fallschaden nicht erlaubt");
+                                    }
+                                } else if (MUtils.getInstance().getConfig().getBoolean("gamerule.noFallDamage")) {
+                                    MUtils.getInstance().getConfig().set("gamerule.noFallDamage", false);
+                                    MUtils.getInstance().saveConfig();
+                                    for (Player allPlayer : Bukkit.getOnlinePlayers()) {
+                                        allPlayer.sendMessage(MUtils.MainPrefix() + ChatColor.GREEN + "Falschaden erlaubt");
+                                    }
+                                }
+                                break;
+
+                            case 27:
+                                SettingsMenu.SettingsGenerator();
+                                player.openInventory(SettingsMenu.gui);
+                                break;
+                        }
+
+
+
+
                     }
                 }
             }
