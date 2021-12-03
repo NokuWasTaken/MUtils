@@ -281,15 +281,15 @@ public class SettingsMenuHandler implements Listener {
                         }
                         break;
                     case 25:
-                        if (MUtils.getInstance().getConfig().getBoolean("gamerule.noSneak")) {
-                            MUtils.getInstance().getConfig().set("gamerule.noSneak", true);
+                        if (!MUtils.getInstance().getConfig().getBoolean("gamerule.noSneak")) {
+                            MUtils.getInstance().getConfig().set("gamerule.noSneak", false);
                             MUtils.getInstance().saveConfig();
                             for (Player allPlayer : Bukkit.getOnlinePlayers()) {
                                 allPlayer.sendTitle("", ChatColor.GOLD + "Sneaken" + ChatColor.RED + " nicht erlaubt");
                                 allPlayer.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Sneaken nicht erlaubt");
                             }
-                        } else if (!MUtils.getInstance().getConfig().getBoolean("gamerule.noSneak")) {
-                            MUtils.getInstance().getConfig().set("gamerule.noSneak", false);
+                        } else if (MUtils.getInstance().getConfig().getBoolean("gamerule.noSneak")) {
+                            MUtils.getInstance().getConfig().set("gamerule.noSneak", true);
                             MUtils.getInstance().saveConfig();
                             for (Player allPlayer : Bukkit.getOnlinePlayers()) {
                                 allPlayer.sendTitle("", ChatColor.GOLD + "Sneaken " + ChatColor.GREEN + " erlaubt");
