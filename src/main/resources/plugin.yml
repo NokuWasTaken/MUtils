@@ -11,10 +11,12 @@ commands:
     permission: MUtils.Settings
   life:
     permission: MUtils.Life
-  invsee:
-    permission: MUtils.Invsee
+  challenge:
+    permission: MUtils.Challenge
   timer:
     permission: MUtils.Timer
+  invsee:
+    permission: MUtils.Invsee
 
 permissions:
     MUtils.MUtils:
@@ -24,6 +26,8 @@ permissions:
     MUtils.Life:
       default: op
     MUtils.Timer:
+      default: op
+    MUtils.Challenge:
       default: op
     MUtils.Invsee:
       default: op

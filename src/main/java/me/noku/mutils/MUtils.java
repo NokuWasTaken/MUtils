@@ -63,6 +63,7 @@ public final class MUtils extends JavaPlugin {
         getCommand("settings").setExecutor(new SettingsCommand());
         getCommand("life").setExecutor(new LifeCommand());
         getCommand("timer").setExecutor(new TimerCommand());
+        getCommand("challenges").setExecutor(new ChallengeCommand());
         getCommand("invsee").setExecutor(new InvSeeCommand());
     }
 
