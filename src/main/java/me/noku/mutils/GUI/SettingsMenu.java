@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class SettingsMenu {
 
     public static Inventory gui = Bukkit.createInventory(null, 36, ChatColor.GRAY + ">> " + ChatColor.GOLD + ChatColor.BOLD + "Settings");
-    public static Inventory gui2 = Bukkit.createInventory(null, 36, ChatColor.GRAY + ">> " + ChatColor.GOLD + ChatColor.BOLD + "Settings" + ChatColor.GRAY + "Seite 2");
+    public static Inventory gui2 = Bukkit.createInventory(null, 36, ChatColor.GRAY + ">> " + ChatColor.GOLD + ChatColor.BOLD + "Settings" + ChatColor.GRAY + " Seite 2");
 
     public static void SettingsGenerator () {
 
