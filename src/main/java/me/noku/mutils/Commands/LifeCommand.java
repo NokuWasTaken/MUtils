@@ -20,3 +20,4 @@ public class LifeCommand implements CommandExecutor {
         return false;
     }
 }
+
