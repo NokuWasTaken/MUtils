@@ -11,7 +11,7 @@ commands:
     permission: MUtils.Settings
   life:
     permission: MUtils.Life
-  challenge:
+  challenges:
     permission: MUtils.Challenge
   timer:
     permission: MUtils.Timer
