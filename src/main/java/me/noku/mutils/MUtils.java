@@ -70,6 +70,7 @@ public final class MUtils extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new PlayerJumpEvent(), this);
         Bukkit.getPluginManager().registerEvents(new PlayerSneakEvent(), this);
         Bukkit.getPluginManager().registerEvents(new GainXPEvent(), this);
+        Bukkit.getPluginManager().registerEvents(new CraftItemEvent(), this);
     }
 
     public void Deathevent (String Time, String deathPlayer) {
