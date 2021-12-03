@@ -5,13 +5,25 @@ api-version: 1.17
 authors: [ Noku ]
 
 commands:
+  MUtils:
+    permission: MUtils.MUtils
   settings:
-    permission: MUtils.settings
+    permission: MUtils.Settings
+  life:
+    permission: MUtils.Life
   invsee:
-    permission: MUtils.invsee
+    permission: MUtils.Invsee
   timer:
     permission: MUtils.Timer
 
 permissions:
+    MUtils.MUtils:
+      default: op
     MUtils.settings:
+      default: op
+    MUtils.Life:
+      default: op
+    MUtils.Timer:
+      default: op
+    MUtils.Invsee:
       default: op
