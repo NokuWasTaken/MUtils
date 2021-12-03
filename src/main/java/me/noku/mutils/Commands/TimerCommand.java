@@ -20,7 +20,7 @@ public class TimerCommand implements CommandExecutor {
                     Timer timer = MUtils.getInstance().getTimer();
                     if (!timer.isRunning()) {
                         timer.setRunning(true);
-                        pp.sendMessage(MUtils.TimerPrefix() + ChatColor.GOLD + "Der Timer wurde" + ChatColor.GREEN + "gestartet");
+                        pp.sendMessage(MUtils.TimerPrefix() + ChatColor.GOLD + "Der Timer wurde " + ChatColor.GREEN + "gestartet");
                         MUtils.getInstance().ProtTime();
                     }
                     break;
@@ -28,14 +28,14 @@ public class TimerCommand implements CommandExecutor {
                     Timer timer2 = MUtils.getInstance().getTimer();
                     if (timer2.isRunning()) {
                         timer2.setRunning(false);
-                        pp.sendMessage(MUtils.TimerPrefix() + ChatColor.GOLD + "Der Timer wurde" + ChatColor.RED + "pausiert");
+                        pp.sendMessage(MUtils.TimerPrefix() + ChatColor.GOLD + "Der Timer wurde " + ChatColor.RED + "pausiert");
                     }
                     break;
                 case "reset":
                     Timer timer3 = MUtils.getInstance().getTimer();
                     timer3.setTime(0);
                     timer3.setRunning(false);
-                pp.sendMessage(MUtils.TimerPrefix() + ChatColor.GOLD + "Der Timer wurde" + ChatColor.DARK_RED + "Zurückgesetzt");
+                pp.sendMessage(MUtils.TimerPrefix() + ChatColor.GOLD + "Der Timer wurde " + ChatColor.DARK_RED + "Zurückgesetzt");
                     break;
                 case "set":
                     Timer timer4 = MUtils.getInstance().getTimer();
