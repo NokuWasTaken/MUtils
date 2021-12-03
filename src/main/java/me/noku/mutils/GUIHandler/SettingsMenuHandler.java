@@ -246,15 +246,15 @@ public class SettingsMenuHandler implements Listener {
                         break;
 
                     case 24:
-                        if (MUtils.getInstance().getConfig().getBoolean("gamerule.noCrafting")) {
-                            MUtils.getInstance().getConfig().set("gamerule.noCrafting", false);
+                        if (!MUtils.getInstance().getConfig().getBoolean("gamerule.noCrafting")) {
+                            MUtils.getInstance().getConfig().set("gamerule.noCrafting", true);
                             MUtils.getInstance().saveConfig();
                             for (Player allPlayer : Bukkit.getOnlinePlayers()) {
                                 allPlayer.sendTitle("", ChatColor.GOLD + "Crafting" + ChatColor.RED + " nicht erlaubt");
                                 allPlayer.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Crafting nicht erlaubt");
                             }
-                        } else if (!MUtils.getInstance().getConfig().getBoolean("gamerule.noCrafting")) {
-                            MUtils.getInstance().getConfig().set("gamerule.noCrafting", true);
+                        } else if (MUtils.getInstance().getConfig().getBoolean("gamerule.noCrafting")) {
+                            MUtils.getInstance().getConfig().set("gamerule.noCrafting", false);
                             MUtils.getInstance().saveConfig();
                             for (Player allPlayer : Bukkit.getOnlinePlayers()) {
                                 allPlayer.sendTitle("", ChatColor.GOLD + "Crafting " + ChatColor.GREEN + " erlaubt");
