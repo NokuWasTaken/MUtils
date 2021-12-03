@@ -85,7 +85,7 @@ public final class MUtils extends JavaPlugin {
                     " \n" +
                                   DeathPrefix() + ChatColor.GOLD + "Die Challenge ist hiermit beendet\n" +
                     " \n" +
-                                  DeathPrefix() + ChatColor.GOLD + "Zeit Verschwendet : " + ChatColor.RED + Time + "\n" +
+                                  DeathPrefix() + ChatColor.GOLD + "Zeit Verschwendet: " + ChatColor.RED + Time + "\n" +
                     " \n" +
                                   ChatColor.GOLD + "-----------------------------------"
             );
@@ -103,7 +103,7 @@ public final class MUtils extends JavaPlugin {
                         " \n" +
                         WinPrefix() + ChatColor.GOLD + "Die Challenge wurde abgeschlossen\n" +
                         " \n" +
-                        WinPrefix() + ChatColor.GOLD + "Zeit benötigt : " + ChatColor.BLUE + Time + "\n" +
+                        WinPrefix() + ChatColor.GOLD + "Zeit benötigt: " + ChatColor.BLUE + Time + "\n" +
                         " \n" +
                         ChatColor.GOLD + "-----------------------------------");
             }
