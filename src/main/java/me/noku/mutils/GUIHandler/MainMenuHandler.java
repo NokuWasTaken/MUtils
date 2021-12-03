@@ -1,5 +1,6 @@
 package me.noku.mutils.GUIHandler;
 
+import me.noku.mutils.GUI.ChallengeMenu;
 import me.noku.mutils.GUI.LifeMenu;
 import me.noku.mutils.GUI.SettingsMenu;
 import me.noku.mutils.GUI.TimerMenu;
@@ -22,7 +23,8 @@ public class MainMenuHandler implements Listener {
                     event.setCancelled(true);
                     switch (event.getSlot()) {
                         case 28:
-
+                            ChallengeMenu.InventoryBuilder();
+                            player.openInventory(ChallengeMenu.gui);
                             break;
                         case 30:
                             SettingsMenu.SettingsGenerator();
