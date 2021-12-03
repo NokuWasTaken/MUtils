@@ -228,15 +228,15 @@ public class SettingsMenuHandler implements Listener {
                         break;
 
                     case 15:
-                        if (MUtils.getInstance().getConfig().getBoolean("gamerule.noXP")) {
-                            MUtils.getInstance().getConfig().set("gamerule.noXP", false);
+                        if (!MUtils.getInstance().getConfig().getBoolean("gamerule.noXP")) {
+                            MUtils.getInstance().getConfig().set("gamerule.noXP", true);
                             MUtils.getInstance().saveConfig();
                             for (Player allPlayer : Bukkit.getOnlinePlayers()) {
                                 allPlayer.sendTitle("", ChatColor.GOLD + "XP" + ChatColor.RED + " nicht erlaubt");
                                 allPlayer.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "XP nicht erlaubt");
                             }
-                        } else if (!MUtils.getInstance().getConfig().getBoolean("gamerule.noXP")) {
-                            MUtils.getInstance().getConfig().set("gamerule.noXP", true);
+                        } else if (MUtils.getInstance().getConfig().getBoolean("gamerule.noXP")) {
+                            MUtils.getInstance().getConfig().set("gamerule.noXP", false);
                             MUtils.getInstance().saveConfig();
                             for (Player allPlayer : Bukkit.getOnlinePlayers()) {
                                 allPlayer.sendTitle("", ChatColor.GOLD + "XP " + ChatColor.GREEN + " erlaubt");
@@ -281,15 +281,15 @@ public class SettingsMenuHandler implements Listener {
                         }
                         break;
                     case 25:
-                        if (!MUtils.getInstance().getConfig().getBoolean("gamerule.noSneak")) {
-                            MUtils.getInstance().getConfig().set("gamerule.noSneak", true);
+                        if (MUtils.getInstance().getConfig().getBoolean("gamerule.noSneak")) {
+                            MUtils.getInstance().getConfig().set("gamerule.noSneak", false);
                             MUtils.getInstance().saveConfig();
                             for (Player allPlayer : Bukkit.getOnlinePlayers()) {
                                 allPlayer.sendTitle("", ChatColor.GOLD + "Sneaken" + ChatColor.RED + " nicht erlaubt");
                                 allPlayer.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Sneaken nicht erlaubt");
                             }
-                        } else if (MUtils.getInstance().getConfig().getBoolean("gamerule.noSneak")) {
-                            MUtils.getInstance().getConfig().set("gamerule.noSneak", false);
+                        } else if (!MUtils.getInstance().getConfig().getBoolean("gamerule.noSneak")) {
+                            MUtils.getInstance().getConfig().set("gamerule.noSneak", true);
                             MUtils.getInstance().saveConfig();
                             for (Player allPlayer : Bukkit.getOnlinePlayers()) {
                                 allPlayer.sendTitle("", ChatColor.GOLD + "Sneaken " + ChatColor.GREEN + " erlaubt");
