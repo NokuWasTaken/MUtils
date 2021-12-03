@@ -14,12 +14,13 @@ public class DamageEvent implements Listener {
 
     @EventHandler
     public void onDamage(EntityDamageEvent event) {
+        if (!MUtils.getInstance().getTimer().isRunning()) {
+            event.setCancelled(true);
+            return;
+        }
         if (event.getEntity() instanceof Player) {
             Player player = (Player) event.getEntity();
-            if (!MUtils.getInstance().getTimer().isRunning()) {
-                event.setCancelled(true);
-                return;
-            }
+
 
             if (MUtils.getInstance().getTimer().isRunning()) {
                 event.setDamage(event.getDamage() * MUtils.getInstance().getConfig().getInt("gamerule.damageMultiplier"));
@@ -35,7 +36,7 @@ public class DamageEvent implements Listener {
 
             if (MUtils.getInstance().getTimer().isRunning()) {
                 if (MUtils.getInstance().getConfig().getBoolean("gamerule.50BlocksIntoTheAir")) {
-                    player.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 1 + 20, 42, false));
+                    player.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 20, 42, false, false));
                 }
             }
 
