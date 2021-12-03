@@ -16,6 +16,15 @@ public class SettingsCommand implements CommandExecutor {
                 SettingsMenu.SettingsGenerator();
                 player.openInventory(SettingsMenu.gui);
             }
+            if (args.length == 1) {
+                if (args[0].equals("1")) {
+                    SettingsMenu.SettingsGenerator();
+                    player.openInventory(SettingsMenu.gui);
+                }else if (args[0].equals("2")) {
+                    SettingsMenu.SettingsGenerator();
+                    player.openInventory(SettingsMenu.gui2);
+                }
+            }
         }
         return false;
     }
