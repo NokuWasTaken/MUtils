@@ -43,7 +43,7 @@ Special Options to set Your Hearts
 
 ----------Timer----------
 
-The plugin has an own Timer with its on GUI to have the full control over it
+The plugin has an own Timer with its own GUI to have the full control over it
 
 ----------Planned Features----------
 - Block Randomizer
