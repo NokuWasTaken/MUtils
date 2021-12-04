@@ -18,8 +18,9 @@ public class ChallengeMenu {
         gui.setItem(0, new ItemBuilder(Material.SPRUCE_DOOR).setDisplayname(ChatColor.GOLD + "Zurück").setLore("Click / Open").build());
         gui.setItem(10, new ItemBuilder(Material.DIRT).setDisplayname(ChatColor.GOLD + "Only Dirt").setLore("Click / Set").build());
         gui.setItem(19, new ItemBuilder(Material.BEDROCK).setDisplayname(ChatColor.GOLD + "Bedrock Walls").setLore("Click / Set").build());
-        gui.setItem(11, new ItemBuilder(Material.BARRIER).setDisplayname(ChatColor.GOLD + "Blöcke verschwinden").setLore("Click / Set").build());
+        gui.setItem(11, new ItemBuilder(Material.BARRIER).setDisplayname(ChatColor.GOLD + "Block Despawn").setLore("Click / Set").build());
         gui.setItem(20, new ItemBuilder(Material.ELYTRA).setDisplayname(ChatColor.GOLD + "50BlocksIntoTheAir").setLore("Click / Set").build());
+        gui.setItem(21, new ItemBuilder(Material.STRUCTURE_VOID).setDisplayname(ChatColor.GOLD + "Floor Hole").setLore("Click / Set").build());
 
 
     }

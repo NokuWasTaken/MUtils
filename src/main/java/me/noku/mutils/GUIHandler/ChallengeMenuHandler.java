@@ -69,17 +69,32 @@ public class ChallengeMenuHandler implements Listener {
                                 }
                                 break;
                             case 20:
-                                if (MUtils.getInstance().getConfig().getBoolean("gamerule.50BlocksIntoTheAir")) {
-                                    MUtils.getInstance().getConfig().set("gamerule.50BlocksIntoTheAir", false);
+                                if (MUtils.getInstance().getConfig().getBoolean("challenge.50BlocksIntoTheAir")) {
+                                    MUtils.getInstance().getConfig().set("challenge.50BlocksIntoTheAir", false);
                                     MUtils.getInstance().saveConfig();
                                     for (Player allPlayer : Bukkit.getOnlinePlayers()) {
                                         allPlayer.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "50 BlocksIntoTheAir challenge deaktiviert");
                                     }
-                                } else if (!MUtils.getInstance().getConfig().getBoolean("gamerule.50BlocksIntoTheAir")) {
-                                    MUtils.getInstance().getConfig().set("gamerule.50BlocksIntoTheAir", true);
+                                } else if (!MUtils.getInstance().getConfig().getBoolean("challenge.50BlocksIntoTheAir")) {
+                                    MUtils.getInstance().getConfig().set("challenge.50BlocksIntoTheAir", true);
                                     MUtils.getInstance().saveConfig();
                                     for (Player allPlayer : Bukkit.getOnlinePlayers()) {
                                         allPlayer.sendMessage(MUtils.MainPrefix() + ChatColor.GREEN + "50 BlocksIntoTheAir Challenge aktiviert");
+                                    }
+                                }
+                                break;
+                            case 12:
+                                if (MUtils.getInstance().getConfig().getBoolean("challenge.floorHole")) {
+                                    MUtils.getInstance().getConfig().set("challenge.floorHole", false);
+                                    MUtils.getInstance().saveConfig();
+                                    for (Player allPlayer : Bukkit.getOnlinePlayers()) {
+                                        allPlayer.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "FloorHole challenge deaktiviert");
+                                    }
+                                } else if (!MUtils.getInstance().getConfig().getBoolean("challenge.floorHole")) {
+                                    MUtils.getInstance().getConfig().set("challenge.floorHole", true);
+                                    MUtils.getInstance().saveConfig();
+                                    for (Player allPlayer : Bukkit.getOnlinePlayers()) {
+                                        allPlayer.sendMessage(MUtils.MainPrefix() + ChatColor.GREEN + "FloorHole Challenge aktiviert");
                                     }
                                 }
                                 break;

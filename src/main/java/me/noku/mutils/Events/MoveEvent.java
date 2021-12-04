@@ -21,9 +21,7 @@ public class MoveEvent implements Listener {
         World world = player.getLocation().getWorld();
         Location loc = new Location(world, x, y - 1, z);
 
-
         if (MUtils.getInstance().getTimer().isRunning()) {
-
 
             if (MUtils.getInstance().getConfig().getBoolean("challenge.onlyDirt")) {
                 if (loc.getBlock().getType() != Material.DIRT) {
@@ -41,6 +39,18 @@ public class MoveEvent implements Listener {
 
                     }
                 }.runTaskLater(MUtils.getInstance(), 5 * 20);
+            }
+
+            if (MUtils.getInstance().getConfig().getBoolean("challenge.floorHole")) {
+                new BukkitRunnable() {
+                    @Override
+                    public void run() {
+                        for (double i = 0; i <= y; i++) {
+                            Location loc2 = new Location(world, x, i, z);
+                            loc2.getBlock().setType(Material.AIR);
+                        }
+                    }
+                }.runTaskLater(MUtils.getInstance(), 10 * 20);
             }
 
             if (MUtils.getInstance().getConfig().getBoolean("challenge.bedrockWalls")) {
