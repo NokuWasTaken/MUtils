@@ -86,6 +86,7 @@ public final class MUtils extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new MoveEvent(), this);
     }
 
+
     public void Deathevent(String Time, String deathPlayer) {
         for (Player allPlayer : Bukkit.getOnlinePlayers()) {
             timer.setRunning(false);
