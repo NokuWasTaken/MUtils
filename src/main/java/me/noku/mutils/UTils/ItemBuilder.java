@@ -4,12 +4,13 @@ import org.bukkit.Material;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-
 import java.util.Arrays;
+
 
 public class ItemBuilder {
     private ItemMeta itemMeta;
     private ItemStack itemStack;
+
     public ItemBuilder(Material mat){
         itemStack = new ItemStack(mat);
         itemMeta = itemStack.getItemMeta();
@@ -34,7 +35,11 @@ public class ItemBuilder {
         itemMeta.addItemFlags(s);
         return this;
     }
+    public ItemBuilder addCustomModelData(int i) {
+        itemMeta.setCustomModelData(i);
+        return this;
 
+    }
     @Override
     public String toString() {
         return "ItemBuilder{" +
@@ -46,7 +51,4 @@ public class ItemBuilder {
         itemStack.setItemMeta(itemMeta);
         return itemStack;
     }
-
-
 }
-
