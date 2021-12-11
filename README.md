@@ -1,6 +1,6 @@
 # MUtils
 
-Challenge PlugIn inspired from BastiGHG offering lots of features
+Challenge PlugIn offering lots of features
 
 ----------Settings----------
 
@@ -21,6 +21,7 @@ Challenge PlugIn inspired from BastiGHG offering lots of features
 - Allow Dying
 
 ----------Targets----------
+
 - Target EnderDragon
 - Target Wither
 
@@ -48,6 +49,7 @@ Special Options to set Your Hearts
 The plugin has an own Timer with its own GUI to have the full control over it
 
 ----------Planned Features----------
+
 - Block Randomizer
 - Crafting Randomizer
 - Entity Randomizer
@@ -56,3 +58,13 @@ The plugin has an own Timer with its own GUI to have the full control over it
 - Reversed Damage
 - Anvilrain
 - Floor hole
+
+----------Important Commands----------
+- [/MUtils] - opens the Main GUI
+- [/Settings] - opens the Settings GUI
+- [/challenges] - opens the Challenge GUI
+- [/life] - opens the Life GUI
+- [/timer] - accesses the Timer
+- [/Invsee] - Accessees other Players Inventory
+- [/Day]/[/Night] - Sets The Time to Day/Night
+  
