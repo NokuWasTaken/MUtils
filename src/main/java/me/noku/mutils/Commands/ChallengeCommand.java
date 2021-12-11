@@ -1,6 +1,8 @@
 package me.noku.mutils.Commands;
 
 import me.noku.mutils.GUI.ChallengeMenu;
+import me.noku.mutils.MUtils;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -17,6 +19,8 @@ public class ChallengeCommand implements CommandExecutor {
                 ChallengeMenu.InventoryBuilder();
                 player.openInventory(ChallengeMenu.gui);
 
+            } else {
+                player.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Usage : " + ChatColor.GOLD + "/Challenge");
             }
         }
         return false;

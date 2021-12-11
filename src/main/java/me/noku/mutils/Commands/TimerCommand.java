@@ -19,6 +19,9 @@ public class TimerCommand implements CommandExecutor {
         if (args.length == 1) {
             for (Player pp : Bukkit.getOnlinePlayers()) {
                 switch (args[0]) {
+                    default:
+                        sender.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Usage " + ChatColor.GOLD + "/timer " + ChatColor.GRAY +"<" + ChatColor.AQUA + "resume/pause/reset/set" + ChatColor.GRAY + ">");
+                        break;
                     case "resume":
                         Timer timer = MUtils.getInstance().getTimer();
                         if (!timer.isRunning()) {
@@ -40,25 +43,28 @@ public class TimerCommand implements CommandExecutor {
                         timer3.setRunning(false);
                         pp.sendMessage(MUtils.TimerPrefix() + ChatColor.GOLD + "Der Timer wurde " + ChatColor.DARK_RED + "Zurückgesetzt");
                         break;
-                    case "set":
-                        Timer timer4 = MUtils.getInstance().getTimer();
-                        if (args.length == 2) {
-                            timer4.setTime(Integer.parseInt(args[1]));
-                            timer4.setRunning(false);
-                            pp.sendMessage(MUtils.TimerPrefix() + ChatColor.GOLD + "Der Timer wurde auf " + ChatColor.AQUA + args[1] + ChatColor.GOLD + " Gesetzt");
-                        }
-                        break;
                 }
             }
-        } else if (args.length == 0) {
+        }else if (args.length == 2) {
+            if (args[0].equals("set")) {
+                Timer timer4 = MUtils.getInstance().getTimer();
+                timer4.setTime(Integer.parseInt(args[1]));
+                timer4.setRunning(false);
+                for (Player pp : Bukkit.getOnlinePlayers()) {
+                    pp.sendMessage(MUtils.TimerPrefix() + ChatColor.GOLD + "Der Timer wurde auf " + ChatColor.AQUA + args[1] + ChatColor.GOLD + " Gesetzt");
+                }
+            } else {
+                sender.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Usage " + ChatColor.GOLD + "/timer " + ChatColor.GRAY +"<" + ChatColor.AQUA + "resume/pause/reset/set" + ChatColor.GRAY + ">");
+            }
+        }else if (args.length == 0) {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
                 TimerMenu.InventoryBuilder();
                 player.openInventory(TimerMenu.gui);
             }
+        }else {
+            sender.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Usage " + ChatColor.GOLD + "/timer " + ChatColor.GRAY +"<" + ChatColor.AQUA + "resume/pause/reset/set" + ChatColor.GRAY + ">");
         }
-
-
         return false;
     }
 }

@@ -1,6 +1,8 @@
 package me.noku.mutils.Commands;
 
 import me.noku.mutils.GUI.LifeMenu;
+import me.noku.mutils.MUtils;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -15,6 +17,8 @@ public class LifeCommand implements CommandExecutor {
             if (args.length == 0) {
                 LifeMenu.LifeGenerator();
                 player.openInventory(LifeMenu.gui);
+            } else {
+                player.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Usage : " + ChatColor.GOLD + "/Life");
             }
         }
         return false;

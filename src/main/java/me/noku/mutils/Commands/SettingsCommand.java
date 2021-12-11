@@ -1,6 +1,8 @@
 package me.noku.mutils.Commands;
 
 import me.noku.mutils.GUI.SettingsMenu;
+import me.noku.mutils.MUtils;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -15,8 +17,7 @@ public class SettingsCommand implements CommandExecutor {
             if (args.length == 0) {
                 SettingsMenu.SettingsGenerator();
                 player.openInventory(SettingsMenu.gui);
-            }
-            if (args.length == 1) {
+            } else if (args.length == 1) {
                 if (args[0].equals("1")) {
                     SettingsMenu.SettingsGenerator();
                     player.openInventory(SettingsMenu.gui);
@@ -24,7 +25,10 @@ public class SettingsCommand implements CommandExecutor {
                     SettingsMenu.SettingsGenerator();
                     player.openInventory(SettingsMenu.gui2);
                 }
+            } else {
+                player.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Usage : " + ChatColor.GOLD + "/Settings" + ChatColor.GRAY + " <" + ChatColor.AQUA + "1/2" + ChatColor.GRAY + ">");
             }
+
         }
         return false;
     }
