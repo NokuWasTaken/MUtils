@@ -38,7 +38,6 @@ public class ItemBuilder {
     public ItemBuilder addCustomModelData(int i) {
         itemMeta.setCustomModelData(i);
         return this;
-
     }
     @Override
     public String toString() {

@@ -75,7 +75,7 @@ public final class MUtils extends JavaPlugin {
         getUtils().log(MainPrefix() + ChatColor.GREEN + "Events registered");
 
         getUtils().log("--------------------------\n" +
-                "                        MUtils v1.4          \n" +
+                "                        MUtils v1.4.1        \n" +
                 "                         by NokuHD        \n" +
                 "                 --------------------------");
     }
