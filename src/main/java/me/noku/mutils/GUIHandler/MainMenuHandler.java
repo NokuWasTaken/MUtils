@@ -22,19 +22,19 @@ public class MainMenuHandler implements Listener {
                 if (event.getCurrentItem().getItemMeta() != null) {
                     event.setCancelled(true);
                     switch (event.getSlot()) {
-                        case 28:
+                        case 37:
                             ChallengeMenu.InventoryBuilder();
                             player.openInventory(ChallengeMenu.gui);
                             break;
-                        case 30:
+                        case 39:
                             SettingsMenu.SettingsGenerator();
                             player.openInventory(SettingsMenu.gui);
                             break;
-                        case 32:
+                        case 41:
                             TimerMenu.InventoryBuilder();
                             player.openInventory(TimerMenu.gui);
                             break;
-                        case 34:
+                        case 43:
                             LifeMenu.LifeGenerator();
                             player.openInventory(LifeMenu.gui);
                             break;
