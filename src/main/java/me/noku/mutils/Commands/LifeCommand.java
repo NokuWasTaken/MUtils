@@ -18,8 +18,10 @@ public class LifeCommand implements CommandExecutor {
                 LifeMenu.LifeGenerator();
                 player.openInventory(LifeMenu.gui);
             } else {
-                player.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Usage : " + ChatColor.GOLD + "/Life");
+                sender.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Usage : " + ChatColor.GOLD + "/Life");
             }
+        } else {
+            sender.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Du musst ein" + ChatColor.AQUA + " Spieler " + ChatColor.RED + "sein um diesen Command auszuführen");
         }
         return false;
     }

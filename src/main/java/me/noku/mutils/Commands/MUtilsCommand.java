@@ -18,8 +18,10 @@ public class MUtilsCommand implements CommandExecutor {
                 MainMenu.MainGUIGenerator();
                 player.openInventory(MainMenu.gui);
             } else {
-                player.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Usage : " + ChatColor.GOLD + "/MUtils");
+                sender.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Usage : " + ChatColor.GOLD + "/MUtils");
             }
+        } else {
+            sender.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Du musst ein" + ChatColor.AQUA + " Spieler " + ChatColor.RED + "sein um diesen Command auszuführen");
         }
         return false;
     }

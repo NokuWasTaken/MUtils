@@ -20,8 +20,10 @@ public class ChallengeCommand implements CommandExecutor {
                 player.openInventory(ChallengeMenu.gui);
 
             } else {
-                player.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Usage : " + ChatColor.GOLD + "/Challenge");
+                sender.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Usage : " + ChatColor.GOLD + "/Challenge");
             }
+        } else {
+            sender.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Du musst ein" + ChatColor.AQUA + " Spieler " + ChatColor.RED + "sein um diesen Command auszuführen");
         }
         return false;
     }

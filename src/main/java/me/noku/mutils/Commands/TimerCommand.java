@@ -61,6 +61,8 @@ public class TimerCommand implements CommandExecutor {
                 Player player = (Player) sender;
                 TimerMenu.InventoryBuilder();
                 player.openInventory(TimerMenu.gui);
+            } else {
+                sender.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Du musst ein" + ChatColor.AQUA + " Spieler " + ChatColor.RED + "sein um diesen Command auszuführen");
             }
         }else {
             sender.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Usage " + ChatColor.GOLD + "/timer " + ChatColor.GRAY +"<" + ChatColor.AQUA + "resume/pause/reset/set" + ChatColor.GRAY + ">");
