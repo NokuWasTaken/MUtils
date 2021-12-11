@@ -17,6 +17,8 @@ commands:
     permission: MUtils.Timer
   invsee:
     permission: MUtils.Invsee
+  day:
+    permission: MUtils.Day
 
 permissions:
     MUtils.MUtils:
@@ -30,4 +32,6 @@ permissions:
     MUtils.Challenge:
       default: op
     MUtils.Invsee:
+      default: op
+    MUtils.Day:
       default: op

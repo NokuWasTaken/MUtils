@@ -1,6 +1,8 @@
 package me.noku.mutils;
 
 import me.noku.mutils.Commands.*;
+import me.noku.mutils.Commands.TimeCommands.DayCommand;
+import me.noku.mutils.Commands.TimeCommands.NightCommand;
 import me.noku.mutils.Events.*;
 import me.noku.mutils.GUIHandler.*;
 import me.noku.mutils.UTils.Timer;
@@ -87,6 +89,7 @@ public final class MUtils extends JavaPlugin {
         getUtils().command("timer", new TimerCommand());
         getUtils().command("challenges", new ChallengeCommand());
         getUtils().command("invsee", new InvSeeCommand());
+        getUtils().command("day", new DayCommand());
     }
 
     public void EventRegistry() {
@@ -106,6 +109,7 @@ public final class MUtils extends JavaPlugin {
         getUtils().event(new CraftItemEvent(), MUtils.getInstance());
         getUtils().event(new MoveEvent(), MUtils.getInstance());
         getUtils().event(new JoinQuitEvent(), MUtils.getInstance());
+        getUtils().event(new TradeEvent(), MUtils.getInstance());
     }
 
 
