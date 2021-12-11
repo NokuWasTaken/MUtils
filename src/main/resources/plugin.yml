@@ -1,5 +1,5 @@
 name: MUtils
-version: 1.4.1
+version: 1.4.2
 main: me.noku.mutils.MUtils
 api-version: 1.17
 authors: [ Noku ]
