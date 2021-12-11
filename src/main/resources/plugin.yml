@@ -24,18 +24,18 @@ commands:
 
 permissions:
   MUtils.MUtils:
-      default: op
-    MUtils.settings:
-      default: op
-    MUtils.Life:
-      default: op
-    MUtils.Timer:
-      default: op
-    MUtils.Challenge:
-      default: op
-    MUtils.Invsee:
-      default: op
-    MUtils.Day:
-      default: op
-    MUtils.Night:
-      default: op
+     default: op
+  MUtils.settings:
+     default: op
+  MUtils.Life:
+     default: op
+  MUtils.Timer:
+     default: op
+  MUtils.Challenge:
+    default: op
+  MUtils.Invsee:
+    default: op
+  MUtils.Day:
+    default: op
+  MUtils.Night:
+    default: op
