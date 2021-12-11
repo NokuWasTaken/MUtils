@@ -4,6 +4,7 @@ import me.noku.mutils.Commands.*;
 import me.noku.mutils.Events.*;
 import me.noku.mutils.GUIHandler.*;
 import me.noku.mutils.UTils.Timer;
+import me.noku.mutils.UTils.UTils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
@@ -16,23 +17,20 @@ public final class MUtils extends JavaPlugin {
 
     private static MUtils instance;
     private Timer timer;
+    private UTils utils;
 
     public static String MainPrefix() {
         return ChatColor.GOLD + "MUtils" + ChatColor.GRAY + " | " + ChatColor.GRAY;
     }
-
     public static String DamagePrefix() {
         return ChatColor.DARK_RED + "Damage" + ChatColor.GRAY + " | " + ChatColor.GRAY;
     }
-
     public static String DeathPrefix() {
         return ChatColor.RED + "Tod" + ChatColor.GRAY + " | " + ChatColor.GRAY;
     }
-
     public static String TimerPrefix() {
         return ChatColor.GOLD + "Timer" + ChatColor.GRAY + " | " + ChatColor.GRAY;
     }
-
     public static String WinPrefix() {
         return ChatColor.GOLD + "Geschafft" + ChatColor.GRAY + " | " + ChatColor.GRAY;
     }
@@ -45,10 +43,8 @@ public final class MUtils extends JavaPlugin {
     @Override
     public void onEnable() {
         boot();
-        saveDefaultConfig();
-        CommandRegistry();
-        EventRegistry();
-        timer = new Timer();
+
+
     }
 
     @Override
@@ -58,32 +54,58 @@ public final class MUtils extends JavaPlugin {
         saveConfig();
     }
 
+    public void boot() {
+
+        utils = new UTils();
+        getUtils().log(MainPrefix() + ChatColor.GREEN + "Utils Loaded");
+
+        timer = new Timer();
+        getUtils().log(MainPrefix() + ChatColor.GREEN + "Timer loaded");
+
+        instance = this;
+        getUtils().log(MainPrefix() + ChatColor.GREEN + "Main Instance loaded");
+
+        saveDefaultConfig();
+        getUtils().log(MainPrefix() + ChatColor.GREEN + "Config loaded");
+
+        CommandRegistry();
+        getUtils().log(MainPrefix() + ChatColor.GREEN + "Commands registered");
+
+        EventRegistry();
+        getUtils().log(MainPrefix() + ChatColor.GREEN + "Events registered");
+
+        getUtils().log("--------------------------\n" +
+                "                        MUtils v1.4          \n" +
+                "                         by NokuHD        \n" +
+                "                 --------------------------");
+    }
+
     public void CommandRegistry() {
-        getCommand("MUtils").setExecutor(new MUtilsCommand());
-        getCommand("settings").setExecutor(new SettingsCommand());
-        getCommand("life").setExecutor(new LifeCommand());
-        getCommand("timer").setExecutor(new TimerCommand());
-        getCommand("challenges").setExecutor(new ChallengeCommand());
-        getCommand("invsee").setExecutor(new InvSeeCommand());
+        getUtils().command("MUtils", new MUtilsCommand());
+        getUtils().command("settings", new SettingsCommand());
+        getUtils().command("life", new LifeCommand());
+        getUtils().command("timer", new TimerCommand());
+        getUtils().command("challenges", new ChallengeCommand());
+        getUtils().command("invsee", new InvSeeCommand());
     }
 
     public void EventRegistry() {
-        Bukkit.getPluginManager().registerEvents(new JoinQuitEvent(), this);
-        Bukkit.getPluginManager().registerEvents(new MainMenuHandler(), this);
-        Bukkit.getPluginManager().registerEvents(new SettingsMenuHandler(), this);
-        Bukkit.getPluginManager().registerEvents(new DamageEvent(), this);
-        Bukkit.getPluginManager().registerEvents(new BlockPlaceBreakEvent(), this);
-        Bukkit.getPluginManager().registerEvents(new InventoryClickEvent(), this);
-        Bukkit.getPluginManager().registerEvents(new EntityregainHealtEvent(), this);
-        Bukkit.getPluginManager().registerEvents(new DeathEvent(), this);
-        Bukkit.getPluginManager().registerEvents(new LifeMenuHandler(), this);
-        Bukkit.getPluginManager().registerEvents(new TimerMenuHandler(), this);
-        Bukkit.getPluginManager().registerEvents(new PlayerJumpEvent(), this);
-        Bukkit.getPluginManager().registerEvents(new PlayerSneakEvent(), this);
-        Bukkit.getPluginManager().registerEvents(new GainXPEvent(), this);
-        Bukkit.getPluginManager().registerEvents(new CraftItemEvent(), this);
-        Bukkit.getPluginManager().registerEvents(new ChallengeMenuHandler(), this);
-        Bukkit.getPluginManager().registerEvents(new MoveEvent(), this);
+        getUtils().event(new MainMenuHandler(), MUtils.getInstance());
+        getUtils().event(new SettingsMenuHandler(), MUtils.getInstance());
+        getUtils().event(new LifeMenuHandler(), MUtils.getInstance());
+        getUtils().event(new TimerMenuHandler(), MUtils.getInstance());
+        getUtils().event(new ChallengeMenuHandler(), MUtils.getInstance());
+        getUtils().event(new InventoryClickEvent(), MUtils.getInstance());
+        getUtils().event(new DamageEvent(), MUtils.getInstance());
+        getUtils().event(new DeathEvent(), MUtils.getInstance());
+        getUtils().event(new BlockPlaceBreakEvent(), MUtils.getInstance());
+        getUtils().event(new EntityregainHealtEvent(), MUtils.getInstance());
+        getUtils().event(new PlayerJumpEvent(), MUtils.getInstance());
+        getUtils().event(new PlayerSneakEvent(), MUtils.getInstance());
+        getUtils().event(new GainXPEvent(), MUtils.getInstance());
+        getUtils().event(new CraftItemEvent(), MUtils.getInstance());
+        getUtils().event(new MoveEvent(), MUtils.getInstance());
+        getUtils().event(new JoinQuitEvent(), MUtils.getInstance());
     }
 
 
@@ -93,7 +115,7 @@ public final class MUtils extends JavaPlugin {
             if (allPlayer.getGameMode() != GameMode.CREATIVE) {
                 allPlayer.setGameMode(GameMode.SPECTATOR);
             }
-            allPlayer.sendMessage(ChatColor.GOLD + "-----------------------------------\n" +
+            getUtils().broadcast(ChatColor.GOLD + "-----------------------------------\n" +
                     " \n" +
                     DeathPrefix() + ChatColor.AQUA + deathPlayer + ChatColor.GOLD + " ist Gestorben\n" +
                     " \n" +
@@ -101,8 +123,8 @@ public final class MUtils extends JavaPlugin {
                     " \n" +
                     DeathPrefix() + ChatColor.GOLD + "Zeit Verschwendet: " + ChatColor.RED + Time + "\n" +
                     " \n" +
-                    ChatColor.GOLD + "-----------------------------------"
-            );
+                    ChatColor.GOLD + "-----------------------------------");
+
         }
     }
 
@@ -111,7 +133,7 @@ public final class MUtils extends JavaPlugin {
 
         if (Target == "EnderDragon") {
             for (Player allPlayer : Bukkit.getOnlinePlayers()) {
-                allPlayer.sendMessage(ChatColor.GOLD + "-----------------------------------\n" +
+                getUtils().broadcast(ChatColor.GOLD + "-----------------------------------\n" +
                         " \n" +
                         WinPrefix() + ChatColor.GOLD + "Der " + ChatColor.AQUA + "EnderDragon" + ChatColor.GOLD + "wurde getötet\n" +
                         " \n" +
@@ -124,7 +146,7 @@ public final class MUtils extends JavaPlugin {
 
         } else if (Target == "Wither") {
             for (Player allPLayer : Bukkit.getOnlinePlayers()) {
-                allPLayer.sendMessage(ChatColor.GOLD + "-----------------------------------\n" +
+                getUtils().broadcast(ChatColor.GOLD + "-----------------------------------\n" +
                         " \n" +
                         WinPrefix() + ChatColor.GOLD + "Der " + ChatColor.AQUA + "Wither" + ChatColor.GOLD + "wurde getötet\n" +
                         " \n" +
@@ -133,21 +155,12 @@ public final class MUtils extends JavaPlugin {
                         WinPrefix() + ChatColor.GOLD + "Zeit benötigt : " + ChatColor.BLUE + Time + "\n" +
                         " \n" +
                         ChatColor.GOLD + "-----------------------------------");
+
             }
         }
     }
 
-    public void boot() {
-        log("--------------------------\n" +
-                "                        MUtils v1.4          \n" +
-                "                         by NokuHD        \n" +
-                "                 --------------------------");
 
-    }
-
-    public void log(String msg) {
-        Bukkit.getConsoleSender().sendMessage(msg);
-    }
 
     public void ProtTime() {
         if (getConfig().getInt("gamerule.protTime") != 0) {
@@ -157,13 +170,16 @@ public final class MUtils extends JavaPlugin {
         }
     }
 
+
     public static MUtils getInstance() {
         return instance;
     }
-
-    public Timer getTimer() {
-        return timer;
+    public UTils getUtils() {
+        return utils;
     }
+    public Timer getTimer() { return timer; }
+
+
 
 
 }
