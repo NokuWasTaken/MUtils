@@ -90,6 +90,7 @@ public final class MUtils extends JavaPlugin {
         getUtils().command("challenges", new ChallengeCommand());
         getUtils().command("invsee", new InvSeeCommand());
         getUtils().command("day", new DayCommand());
+        getUtils().command("night", new NightCommand());
     }
 
     public void EventRegistry() {

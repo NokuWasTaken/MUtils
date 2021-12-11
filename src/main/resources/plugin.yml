@@ -19,9 +19,11 @@ commands:
     permission: MUtils.Invsee
   day:
     permission: MUtils.Day
+  night:
+    permission: MUtils.Night
 
 permissions:
-    MUtils.MUtils:
+  MUtils.MUtils:
       default: op
     MUtils.settings:
       default: op
@@ -34,4 +36,6 @@ permissions:
     MUtils.Invsee:
       default: op
     MUtils.Day:
+      default: op
+    MUtils.Night:
       default: op
