@@ -16,6 +16,7 @@ public class DayCommand implements CommandExecutor {
             Player player = (Player) sender;
             if (args.length == 0) {
                 player.getWorld().setTime(6000);
+                player.sendMessage(MUtils.MainPrefix() + ChatColor.GOLD + "Zeit wurde auf " + ChatColor.GRAY + "[  " +ChatColor.DARK_PURPLE + "13000" + ChatColor.GRAY + " ]" + ChatColor.GOLD + " gesetzt");
             } else {
                 sender.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Usage : " + ChatColor.GOLD + "/Day");
             }

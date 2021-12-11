@@ -14,7 +14,8 @@ public class NightCommand implements CommandExecutor {
         if (sender instanceof Player) {
             Player player = (Player) sender;
             if (args.length == 0) {
-                player.getWorld().setTime(0);
+                player.getWorld().setTime(13000);
+                player.sendMessage(MUtils.MainPrefix() + ChatColor.GOLD + "Zeit wurde auf " + ChatColor.GRAY + "[  " +ChatColor.DARK_PURPLE + "13000" + ChatColor.GRAY + " ]" + ChatColor.GOLD + " gesetzt");
             } else {
                 sender.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Usage : " + ChatColor.GOLD + "/Night");
             }
