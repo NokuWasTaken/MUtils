@@ -1,5 +1,6 @@
 package me.noku.mutils.UTils;
 
+import me.noku.mutils.MUtils;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -8,59 +9,41 @@ import java.io.File;
 import java.io.IOException;
 
 public class ConfigManager {
-    private final FileConfiguration configuration;
-    private final File file;
-    public ConfigManager(String name , File path){
-        file = new File(path, name);
-        if (!file.exists())
-            path.mkdirs();
-        try {
-            file.createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        configuration = new YamlConfiguration();
-        try {
-            configuration.load(file);
-        } catch (IOException | InvalidConfigurationException e) {
-            e.printStackTrace();
-        }
+    //gets variables in the Config
+    public String getString (String path) {
+        return MUtils.getInstance().getConfig().getString(path);
     }
 
-    public File getFile() {
-        return file;
+    public Integer getInt (String path) {
+        return MUtils.getInstance().getConfig().getInt(path);
     }
 
-    public FileConfiguration getConfiguration() {
-        return configuration;
+    public Double getDouble (String path) {
+        return MUtils.getInstance().getConfig().getDouble(path);
     }
-    public void save(){
-        try {
-            configuration.save(file);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    public void reload(){
-        try {
-            configuration.load(file);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InvalidConfigurationException e) {
-            e.printStackTrace();
-        }
 
+    public Boolean getBool (String path) {
+        return MUtils.getInstance().getConfig().getBoolean(path);
     }
-    public Object get(String path){
-        return configuration.get(path);
+
+    //sets variables in the Config
+    public void setString (String path, String var) {
+        MUtils.getInstance().getConfig().set(path, var);
+        MUtils.getInstance().saveConfig();
     }
-    public void set(String path , Object obj){
-        configuration.set(path , obj);
+
+    public void setInt (String path, Integer var) {
+        MUtils.getInstance().getConfig().set(path, var);
+        MUtils.getInstance().saveConfig();
     }
-    public boolean contains(String path){
-        return configuration.contains(path);
+
+    public void setDouble (String path, Double var) {
+        MUtils.getInstance().getConfig().set(path, var);
+        MUtils.getInstance().saveConfig();
     }
-    public boolean isClear(){
-        return configuration.getKeys(false).size() == 0;
+
+    public void setBool (String path, Boolean var) {
+        MUtils.getInstance().getConfig().set(path, var);
+        MUtils.getInstance().saveConfig();
     }
 }
