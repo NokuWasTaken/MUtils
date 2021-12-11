@@ -15,6 +15,7 @@ Challenge PlugIn inspired from BastiGHG offering lots of features
 - No Sneaking Allowed
 - No Jumping Allowed (In Progress)
 - No FallDamage Allowed
+- No Trading Allowed
 - Hearts in Tablist
 - Damage Messages 
 - Allow Dying
@@ -29,6 +30,7 @@ Challenge PlugIn inspired from BastiGHG offering lots of features
 
 - Walk only on Dirt
 - Blocks under you despawn
+- Bedrock walls are following you
 - Take Damage and get launched into the air
 - Play snake with your friends, if your paths cross you die (In Progress)
 

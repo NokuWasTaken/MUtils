@@ -322,6 +322,7 @@ public class SettingsMenuHandler implements Listener {
                                 MainMenu.MainGUIGenerator();
                                 player.openInventory(MainMenu.gui);
                                 break;
+                            //fallschaden
                             case 10:
                                 if (!MUtils.getInstance().getConfig().getBoolean("gamerule.noFallDamage")) {
                                     MUtils.getInstance().getConfig().set("gamerule.noFallDamage", true);
@@ -334,6 +335,22 @@ public class SettingsMenuHandler implements Listener {
                                     MUtils.getInstance().saveConfig();
                                     for (Player allPlayer : Bukkit.getOnlinePlayers()) {
                                         allPlayer.sendMessage(MUtils.MainPrefix() + ChatColor.GREEN + "Falschaden erlaubt");
+                                    }
+                                }
+                                break;
+                            //noTrading
+                            case 19:
+                                if (!MUtils.getInstance().getConfig().getBoolean("gamerule.noTrading")) {
+                                    MUtils.getInstance().getConfig().set("gamerule.noTrading", true);
+                                    MUtils.getInstance().saveConfig();
+                                    for (Player allPlayer : Bukkit.getOnlinePlayers()) {
+                                        allPlayer.sendMessage(MUtils.MainPrefix() + ChatColor.RED + "Traden nicht erlaubt");
+                                    }
+                                } else if (MUtils.getInstance().getConfig().getBoolean("gamerule.noTrading")) {
+                                    MUtils.getInstance().getConfig().set("gamerule.noTrading", false);
+                                    MUtils.getInstance().saveConfig();
+                                    for (Player allPlayer : Bukkit.getOnlinePlayers()) {
+                                        allPlayer.sendMessage(MUtils.MainPrefix() + ChatColor.GREEN + "Traden erlaubt");
                                     }
                                 }
                                 break;

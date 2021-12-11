@@ -17,6 +17,7 @@ gamerule:
   noJump: false
   noCrafting: false
   noFallDamage: false
+  noTrading: false
 
 challenge:
   onlyDirt: false

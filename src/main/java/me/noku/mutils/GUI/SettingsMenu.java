@@ -113,6 +113,12 @@ public class SettingsMenu {
         } else if (!MUtils.getInstance().getConfig().getBoolean("gamerule.noFallDamage")) {
             gui2.setItem(10, new ItemBuilder(Material.FEATHER).setDisplayname(ChatColor.GOLD + "Fallschaden erlaubt").setLore("Click / Set").addCustomModelData(3).build());
         }
+        //no Trading
+        if (MUtils.getInstance().getConfig().getBoolean("gamerule.noTrading")) {
+            gui2.setItem(19, new ItemBuilder(Material.EMERALD).setDisplayname(ChatColor.GOLD + "Trading erlaubt").setLore("Click / Set").addCustomModelData(2).build());
+        } else if (!MUtils.getInstance().getConfig().getBoolean("gamerule.noTrading")) {
+            gui2.setItem(19, new ItemBuilder(Material.EMERALD).setDisplayname(ChatColor.GOLD + "Trading erlaubt").setLore("Click / Set").addCustomModelData(3).build());
+        }
             //BackSite
         gui2.setItem(27, new ItemBuilder(Material.SPRUCE_DOOR).setDisplayname(ChatColor.GOLD + "Seite 1").setLore("Click / Open").addCustomModelData(2).build());
 
