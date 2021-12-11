@@ -11,7 +11,7 @@ public class TradeEvent implements Listener {
     public void onTrade (PlayerTradeEvent event) {
         Player player = event.getPlayer();
         if (MUtils.getInstance().getTimer().isRunning()) {
-            if (MUtils.getInstance().getConfig().getBoolean("settings.noTrading")) {
+            if (MUtils.getInstance().getConfig().getBoolean("gamerule.noTrading")) {
                 player.setHealth(0);
             }
         }
