@@ -15,7 +15,7 @@ public class MainMenu {
             gui.setItem(i, new ItemBuilder(Material.GRAY_STAINED_GLASS_PANE).setDisplayname("").build());
         }
 
-        gui.setItem(13, new ItemBuilder(Material.NETHER_STAR).setDisplayname(ChatColor.GOLD + "MUtils " + ChatColor.AQUA + "v1.4.2").build());
+        gui.setItem(13, new ItemBuilder(Material.NETHER_STAR).setDisplayname(ChatColor.GOLD + "" + ChatColor.BOLD + "MUtils " + ChatColor.AQUA + "v1.4.2").build());
         gui.setItem(37, new ItemBuilder(Material.CONDUIT).setDisplayname(ChatColor.DARK_PURPLE + "Challenges").setLore("Click / Open").build());
         gui.setItem(39, new ItemBuilder(Material.COMMAND_BLOCK).setDisplayname(ChatColor.GOLD + "Settings").setLore("Click / Open").build());
         gui.setItem(41, new ItemBuilder(Material.CLOCK).setDisplayname(ChatColor.GREEN + "Timer").setLore("Click / Open").build());
