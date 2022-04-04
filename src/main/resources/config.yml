@@ -1,0 +1,29 @@
+timer:
+  time:
+  mode: normal
+target:
+  enderDragon: false
+  wither: false
+gamerule:
+  ultraHardCore: false
+  ultraUltraHardCore: false
+  splitHearts: false
+  lifeScoreTab: false
+  allowDie: false
+  damageMessage: false
+  damageMultiplier: 1
+  prottime: 0
+  noXP: false
+  noSneak: false
+  noJumping: false
+  noCrafting: false
+  noFallDamage: false
+  noTrading: false
+
+challenge:
+  onlyDirt: false
+  bedrockWalls: false
+  blockDespawn: false
+  50BlocksIntoTheAir: false
+  floorHole: false
+  hitFreeze: false

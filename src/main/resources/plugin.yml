@@ -1,0 +1,45 @@
+name: MUtils
+version: 1.7.1
+main: me.noku.mutils.MUtils
+api-version: 1.17
+authors: [ Noku ]
+
+commands:
+  MUtils:
+    permission: MUtils.MUtils
+  settings:
+    permission: MUtils.Settings
+  life:
+    permission: MUtils.Life
+  challenges:
+    permission: MUtils.Challenge
+  timer:
+    permission: MUtils.Timer
+  invsee:
+    permission: MUtils.Invsee
+  day:
+    permission: MUtils.Day
+  night:
+    permission: MUtils.Night
+  reset:
+    permission: MUtils.Reset
+
+permissions:
+  MUtils.MUtils:
+     default: op
+  MUtils.settings:
+     default: op
+  MUtils.Life:
+     default: op
+  MUtils.Timer:
+     default: op
+  MUtils.Challenge:
+    default: op
+  MUtils.Invsee:
+    default: op
+  MUtils.Day:
+    default: op
+  MUtils.Night:
+    default: op
+  MUtils.reset:
+    default: op
